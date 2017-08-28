@@ -24,24 +24,27 @@ extern char * strerror(int errno);
  *		(C) 1991 Linus Torvalds
  */
  
-extern inline char * strcpy(char * dest,const char *src);
-extern inline char * strcat(char * dest,const char * src);
-extern inline int strcmp(const char * cs,const char * ct);
-extern inline int strspn(const char * cs, const char * ct);
-extern inline int strcspn(const char * cs, const char * ct);
-extern inline char * strpbrk(const char * cs,const char * ct);
-extern inline char * strstr(const char * cs,const char * ct);
-extern inline int strlen(const char * s);
-extern char * ___strtok;
+extern  char * strcpy(char * dest,const char *src);
+extern  char * strcat(char * dest,const char * src);
+extern  int strcmp(const char * cs,const char * ct);
+extern  int strspn(const char * cs, const char * ct);
+extern  int strcspn(const char * cs, const char * ct);
+extern  char * strpbrk(const char * cs,const char * ct);
+extern  char * strstr(const char * cs,const char * ct);
+extern  int strlen(const char * s);
+extern  char * ___strtok;
 
-extern inline char * strtok(char * s,const char * ct);
+extern  char * strtok(char * s,const char * ct);
 
 /*
  * Changes by falcon<zhangjinw@gmail.com>, the original return value is static
  * inline ... it can not be called by other functions in another files.
  */
 
-extern inline void * memcpy(void * dest,const void * src, int n);
-extern inline void * memmove(void * dest,const void * src, int n);
-extern inline void * memchr(const void * cs,char c,int count);
+extern  void * memcpy(void * dest,const void * src, int n);
+extern  void * memmove(void * dest,const void * src, int n);
+extern  void * memchr(const void * cs,char c,int count);
+extern  void * memset(void * s,char c,int count);
+extern  char * strncpy(char * dest,const char *src,int count);
+extern  char * strchr(const char * s,char c);
 #endif

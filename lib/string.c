@@ -25,7 +25,7 @@ inline char * strcpy(char * dest,const char *src)
         return dest;
 }
 
-static inline char * strncpy(char * dest,const char *src,int count)
+inline char * strncpy(char * dest,const char *src,int count)
 {
         __asm__("cld\n"
                 "1:\tdecl %2\n\t"
@@ -55,7 +55,7 @@ inline char * strcat(char * dest,const char * src)
         return dest;
 }
 
-static inline char * strncat(char * dest,const char * src,int count)
+inline char * strncat(char * dest,const char * src,int count)
 {
         __asm__("cld\n\t"
                 "repne\n\t"
@@ -95,7 +95,7 @@ inline int strcmp(const char * cs,const char * ct)
 }
 
 
-static inline int strncmp(const char * cs,const char * ct,int count)
+inline int strncmp(const char * cs,const char * ct,int count)
 {
         register int __res ;
         __asm__("cld\n"
@@ -116,7 +116,7 @@ static inline int strncmp(const char * cs,const char * ct,int count)
         return __res;
 }
 
-static inline char * strchr(const char * s,char c)
+inline char * strchr(const char * s,char c)
 {
         register char * __res ;
         __asm__("cld\n\t"
@@ -133,7 +133,7 @@ static inline char * strchr(const char * s,char c)
         return __res;
 }
 
-static inline char * strrchr(const char * s,char c)
+inline char * strrchr(const char * s,char c)
 {
         register char * __res; 
         __asm__("cld\n\t"
@@ -349,7 +349,7 @@ inline void * memmove(void * dest,const void * src, int n)
         return dest;
 }
 
-static inline int memcmp(const void * cs,const void * ct,int count)
+inline int memcmp(const void * cs,const void * ct,int count)
 {
         register int __res ;
         __asm__("cld\n\t"
@@ -381,7 +381,7 @@ inline void * memchr(const void * cs,char c,int count)
         return __res;
 }
 
-static inline void * memset(void * s,char c,int count)
+inline void * memset(void * s,char c,int count)
 {
         __asm__("cld\n\t"
                 "rep\n\t"
